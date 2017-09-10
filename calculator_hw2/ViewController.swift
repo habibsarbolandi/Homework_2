@@ -76,6 +76,7 @@ class ViewController: UIViewController {
             operation = sender.tag
             doingMath = true;
         }
+        
         else if sender.tag == 15 {
             
             if operation == 11 {
@@ -93,6 +94,16 @@ class ViewController: UIViewController {
             else if operation == 14 {
                 mathDone.text = String( numberPrevious + numberScreen);
             }
+        }
+        
+        else if sender.tag == 10 {
+            mathDone.text = "";
+            numberPrevious = 0;
+            numberScreen = 0;
+            operation = 0;
+            operationString = "";
+            screenNumber = "";
+
         }
     }
     
