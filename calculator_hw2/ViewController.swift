@@ -80,19 +80,19 @@ class ViewController: UIViewController {
         else if sender.tag == 15 {
             
             if operation == 11 {
-                mathDone.text = String( numberPrevious / numberScreen);
+                finalAnswer.text = String( numberPrevious / numberScreen);
             }
             
             else if operation == 12 {
-                mathDone.text = String( numberPrevious * numberScreen);
+                finalAnswer.text = String( numberPrevious * numberScreen);
             }
             
             else if operation == 13 {
-                mathDone.text = String( numberPrevious - numberScreen);
+                finalAnswer.text = String( numberPrevious - numberScreen);
             }
             
             else if operation == 14 {
-                mathDone.text = String( numberPrevious + numberScreen);
+                finalAnswer.text = String( numberPrevious + numberScreen);
             }
         }
         
