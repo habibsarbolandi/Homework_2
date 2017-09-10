@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var doingMath = false;
     var operationString: String = "";
     var screenNumber: String = "";
+    var operation = 0;
     
     
     
@@ -72,8 +73,26 @@ class ViewController: UIViewController {
                 
             }
             
+            operation = sender.tag
             doingMath = true;
+        }
+        else if sender.tag == 15 {
             
+            if operation == 11 {
+                mathDone.text = String( numberPrevious / numberScreen);
+            }
+            
+            else if operation == 12 {
+                mathDone.text = String( numberPrevious * numberScreen);
+            }
+            
+            else if operation == 13 {
+                mathDone.text = String( numberPrevious - numberScreen);
+            }
+            
+            else if operation == 14 {
+                mathDone.text = String( numberPrevious + numberScreen);
+            }
         }
     }
     
