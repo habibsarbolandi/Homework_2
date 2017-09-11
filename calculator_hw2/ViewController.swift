@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var numberScreen:Double = 0;
+    var numberScreen: Double = 0;
     var numberPrevious: Double = 0;
     var doingMath = false;
     var operationString: String = "";
@@ -43,6 +43,19 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func changeSign(_ sender: UIButton) {
+        numberScreen = -numberScreen;
+        screenNumber = "-" + screenNumber;
+        
+        if numberPrevious == 0 {
+            mathDone.text = screenNumber;
+        }
+       
+        else {
+              mathDone.text = String(numberPrevious) + operationString + screenNumber;
+        }
+    }
+    
     @IBAction func mathButtons(_ sender: UIButton) {
         if mathDone.text != "" && sender.tag != 10 && sender.tag != 15{
             
@@ -69,9 +82,6 @@ class ViewController: UIViewController {
                 
             }
             
-            else if sender.tag == 17 { // Sign change
-                
-            }
             
             operation = sender.tag
             doingMath = true;
@@ -98,6 +108,7 @@ class ViewController: UIViewController {
         
         else if sender.tag == 10 {
             mathDone.text = "";
+            finalAnswer.text = "";
             numberPrevious = 0;
             numberScreen = 0;
             operation = 0;
